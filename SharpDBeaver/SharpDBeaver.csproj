@@ -1,32 +1,30 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <!-- 输出类型为可执行文件 -->
+    <!-- 输出为可执行文件 -->
     <OutputType>Exe</OutputType>
 
-    <!-- 使用 .NET 6 Windows 桌面框架 -->
+    <!-- 框架：.NET 6 Windows 桌面 -->
     <TargetFramework>net6.0-windows</TargetFramework>
 
-    <!-- 启用 WinForms 支持（原 DBeaver GUI 程序依赖 Windows.Forms） -->
+    <!-- 启用 WinForms 支持 -->
     <UseWindowsForms>true</UseWindowsForms>
 
-    <!-- 启用隐式 using 与空值检查 -->
+    <!-- 隐式 using 和空值检查 -->
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
 
-    <!-- 生成目录 -->
+    <!-- 输出设置 -->
     <Platforms>AnyCPU</Platforms>
     <AssemblyName>SharpDBeaver</AssemblyName>
     <RootNamespace>SharpDBeaver</RootNamespace>
     <OutputPath>bin\$(Configuration)\</OutputPath>
   </PropertyGroup>
 
-
-
-  <!-- 如果项目中引用了其他 C# 文件夹，可在此添加 -->
   <ItemGroup>
-    <Compile Include="Program.cs" />
-    <Compile Include="**\*.cs" />
+    <!-- 保留必要依赖 -->
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.6" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
   </ItemGroup>
 
 </Project>
