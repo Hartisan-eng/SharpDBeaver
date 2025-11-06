@@ -1,13 +1,13 @@
 name: Build SharpDBeaver (.NET Framework)
 
 on:
-  workflow_dispatch:  # 手动触发
+  workflow_dispatch:
   push:
     branches: [ main ]
 
 jobs:
   build:
-    runs-on: windows-latest  # 使用 Windows 环境，支持 .NET Framework
+    runs-on: windows-latest
     steps:
       - name: Checkout source
         uses: actions/checkout@v4
@@ -28,4 +28,5 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: SharpDBeaver-exe
-          path: SharpDBeaver/bin/Release/
+          path: |
+            SharpDBeaver/bin/Release/
