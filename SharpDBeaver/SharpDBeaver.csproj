@@ -21,11 +21,7 @@
     <OutputPath>bin\$(Configuration)\</OutputPath>
   </PropertyGroup>
 
-  <ItemGroup>
-    <!-- 保留基础依赖 -->
-    <PackageReference Include="System.Data.SqlClient" Version="4.8.6" />
-    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
-  </ItemGroup>
+
 
   <!-- 如果项目中引用了其他 C# 文件夹，可在此添加 -->
   <ItemGroup>
