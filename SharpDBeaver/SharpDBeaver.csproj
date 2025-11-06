@@ -1,30 +1,26 @@
-<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
 
   <PropertyGroup>
-    <!-- 输出为可执行文件 -->
-    <OutputType>Exe</OutputType>
-
-    <!-- 框架：.NET 6 Windows 桌面 -->
+    <OutputType>WinExe</OutputType>
     <TargetFramework>net6.0-windows</TargetFramework>
-
-    <!-- 启用 WinForms 支持 -->
     <UseWindowsForms>true</UseWindowsForms>
+    <EnableWindowsTargeting>true</EnableWindowsTargeting>
 
-    <!-- 隐式 using 和空值检查 -->
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
+    <!-- 关键修复：禁止生成重复 AssemblyInfo -->
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
 
-    <!-- 输出设置 -->
-    <Platforms>AnyCPU</Platforms>
+    <!-- 可选优化 -->
     <AssemblyName>SharpDBeaver</AssemblyName>
     <RootNamespace>SharpDBeaver</RootNamespace>
-    <OutputPath>bin\$(Configuration)\</OutputPath>
+    <LangVersion>latest</LangVersion>
+    <Nullable>enable</Nullable>
   </PropertyGroup>
 
   <ItemGroup>
-    <!-- 保留必要依赖 -->
-    <PackageReference Include="System.Data.SqlClient" Version="4.8.6" />
-    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="System.Data.SQLite.Core" Version="1.0.118" />
+    <PackageReference Include="Microsoft.Data.SqlClient" Version="5.1.0" />
+    <PackageReference Include="MySql.Data" Version="8.4.0" />
+    <PackageReference Include="Npgsql" Version="8.0.3" />
   </ItemGroup>
 
 </Project>
